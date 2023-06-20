@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@1,700&display=swap');*/
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    font-family: 'Baloo 2', cursive;
+}
+html{
+    scroll-behavior: smooth;
+    height: 100vh;
+    overscroll-behavior-y: scroll;
+    overflow-y: scroll;
+    scroll-snap-type: y proximity;
+}
+body{
+    background: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#logo{
+    display: flex;
+    background:whitesmoke;
+    opacity: 1;
+    box-shadow: -1px -1px 1px #ffffff73, 3px 3px 5px rgba(94, 104, 121, .288);
+    width: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: 0.3s ease;
+    justify-content: flex-start;
+    animation: animeLogo 0.4s ease;
+}
+@keyframes animeLogo{
+    0% {left: -100px; opacity: 0;}
+    100% {left: 0; opacity: 1;}
+}
+#logo.push{
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+.pageI{
+    width: 100%;
+    height: 26vh;
+    position: relative;
+}
+.navII div,.navII a{
+    margin: 20px;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid transparent;
+    transition: 0.2s ease;
+}
+.navII a{
+    margin: 20px;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid transparent;
+    transition: 0.2s ease;
+}
+.navII div:hover{
+    border-bottom: 2px solid salmon;
+}
+.navII .sub{
+    transition: 0.3s ease;
+    text-align: center;
+    padding: 5px 8px 5px 8px;
+    flex-direction: column;
+    display: none;
+    justify-content: center;
+    list-style: none;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%) ;
+    background: #1a9fe4;
+}
+.navII div:hover .sub{
+    width: max-content;
+    display:flex;
+}
+.navII .sub li a{
+    border-bottom: 2px solid white;
+    color: white;
+}
+.navII .sub li a:hover{
+    color: white;
+    border-bottom: 2px solid white;
+}
+.navII{
+    position: absolute;
+    top: 16vh;
+    display: flex;
+    background: rgba(183,56,94,1);
+    align-items: flex-start;
+    justify-content: center;
+    opacity: 1;
+    height:10vh;
+    width: 100%;
+    z-index: 10;
+    pointer-events: all;
+    transition: 0.3s ease;
+}
+.navII.show{
+    pointer-events: all;
+    opacity: 1;
+    height: 10vh;
+}
+.navTag{
+    position: fixed; 
+    bottom: 50px;
+    right: 70px;
+    z-index: 100;
+    text-align: center;
+    font-size: 3rem;
+    height: 65px;
+    width: 65px;
+    border: 2px solid #983c54;
+    transition: 0.5s ease;
+    background: whitesmoke;
+    color: #983c54;
+    transform: rotate(180deg);
+}
+.navTag.change{
+    border: 2px solid transparent;
+    transform: rotate(0deg);
+    background: #c94d72;
+    color: whitesmoke;
+}
+.menu{
+    position: absolute;
+    opacity: 0;
+    height: 50px;
+    top: 18vh;
+    left: 5px;
+    z-index: 190;
+    border-radius: 50%;
+    background: white;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, .288);
+    width: 50px;
+    transition: 0.3s ease;
+    /*animation: animeMenu 0.4s ease; */
+}
+.menu.active{
+    box-shadow: none;
+}
+.pageI .lowNav{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(183,56,94,0.7);
+    animation: animeLowNav 0.4s ease;
+}
+.header{
+    background:rgba(183,56,94,1);
+    color: white;
+    font-size: 1.2rem;
+    margin: 2px;
+    padding: 5px;
+}
+.pageIV{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+}
+.conH{
+    display: flex;
+    justify-content: center;
+}
+.pageIV .partB,.pageIV .partA{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.pageIV .partA .box{
+    width: 100%;
+    margin: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+#contact{
+    color: whitesmoke;
+    background: #434557;
+    padding: 5px 10px 5px 10px;
+}
+.boxList{
+    margin: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;  
+    transition: 0.3s ease;
+}
+.boxList .list{
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, .288);
+    background: #434557;
+    display: flex;
+    padding: 15px;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    animation: animeList 0.5s ease; 
+}
+@keyframes animeList{
+    0% {right: -150px; opacity: 0;}
+    100% {right: 0; opacity: 1;}
+}
+.boxList .list a{
+    margin: 2px;
+    border-radius: 5px;
+    color: whitesmoke;
+    width: 90%;
+    padding: 2px;
+    text-align: center;
+    transition: 0.2s ease;
+}
+.boxList .list a:hover{
+    width: auto;
+    letter-spacing: 1px;
+    color: #d86487;
+}
+
+@media all and (max-width:800px){
+    #logo{
+        width: 30%;
+    }
+    .pageI{
+        height: 20vh;
+    }
+    .menu{
+        opacity: 1;
+        position: fixed;
+    }
+    .boxList .list{
+        width: auto;
+    }
+    .navBar{
+        display: none;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .navII,.navII.show{
+        display: flex;
+        width: auto;
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 11;
+        background: #c94d72;
+        padding: 5px;
+        border-radius: 10px;
+        opacity: 0;
+        position: fixed;
+        top: 25vh;
+        left: -150px;
+    }
+    .navII.show{
+        opacity: 1;
+        left: 0;
+    }
+    .navII div .sub{
+        border-radius: 5px;
+        position: absolute;
+        background: #983c54;
+        left: 100px;
+        transform: translate(19%,-50%);
+    }
+    .navII div{
+        width: 90%;
+        position: relative;
+        padding: 0px 5px 0px 5px;
+        margin: 1px;
+        color: #983c54;
+        background: white;
+        border-radius: 5px;
+        box-shadow: -3px -3px 7px rgba(94, 104, 121, .288), 3px 3px 5px rgba(94, 104, 121, .288);
+    }
+    .navII a{
+        color: #983c54;
+        margin: auto;
+    }
+}
+
+@media all and (max-width:550px){
+    .boxList{
+        display: flex;
+        flex-direction: column;
+    }
+    .boxList .list{
+        margin: 5px;
+        box-shadow: none;
+        width: auto;
+    }
+}

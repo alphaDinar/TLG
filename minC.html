@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/homeII.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/operations.css">
+    
+    </head>
+    <body>
+        <a href="#page">
+            <img src="img/logo.png" id="logo" style="z-index: 11;">
+        </a>
+        <section id="pageI" class="pageI" style="background: url('img/level10.jpg');background-repeat: no-repeat; background-size: cover; background-position: center;">
+            <a href="#pageIV" class="navTag">
+                ^ 
+            </a>
+            <div class="navII">
+                <div>
+                    <a href="index.html">Home</a>
+                </div>
+                <div>About 
+                    <ul class="sub">
+                        <li><a href="company.html">Our Company</a></li>
+                        <li><a href="bod.html">Board Of Directors</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <a href="operations.html">Operations</a>
+                </div>
+                <div>Other Services
+                    <ul class="sub">
+                        <li><a href="minC.html">Mining Consultancy</a></li>
+                        <li><a href="transport.html">Haulage </a></li>
+                    </ul>
+                </div>
+                <div>
+                    <a href="#pageIV">Contact</a>
+                </div>
+            </div>
+            <div class="menu">
+                <img src="img/menu.png">
+            </div>
+            <div class="lowNav" style="height: 20vh;">
+                <h1 id="mHead" style="font-family: 'Roboto',sans-serif; text-align:center; color:white; font-size:2.5rem;"> 
+                    MINING CONSULTANCY
+                </h1>
+            </div>
+        </section>
+        <section class="secII">
+            <style>
+                .panel{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 80%;
+                    height: 80%;
+                    /*background: #1a9fe4; */
+                    background: white;
+                    box-shadow: -1px -1px 1px rgba(94, 104, 121, .288), 3px 3px 5px rgba(94, 104, 121, .288);
+                }
+                .wheelBox{
+                    width: 98%;
+                    height: 50%;
+                    display: flex;
+                    justify-content: space-around;
+                }
+                .wheel{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 30%;
+                    height: 100%;
+                    padding: 5px;
+                    position: absolute;
+                    transform-style: preserve-3d;
+                    transition: 0.5s ease;
+                    position: relative;
+                    cursor: pointer;
+                    box-shadow: -1px -1px 1px rgba(94, 104, 121, .288), 3px 3px 5px rgba(94, 104, 121, .288);
+                }
+                .wheel:hover{
+                    box-shadow: -1px -1px 1px whitesmoke, 3px 3px 5px #ed5a86;
+                }
+                .wheel.flip{
+                    transform: rotateY(180deg);
+                }
+                .front{
+                    position: absolute;
+                    width: 100%;
+                    flex-direction: column;
+                    align-items: center;
+                    display: flex;
+                    justify-content: center;
+                }
+                .back{
+                    background: #b7385e;
+                    color: white;
+                    position: absolute;
+                    transform: rotateY(180deg);
+                    backface-visibility: hidden;
+                    width: 100%;
+                    height: 100%;
+                    padding: 10px;
+                    box-shadow: -1px -1px 1px rgba(94, 104, 121, .288), 3px 3px 5px rgba(94, 104, 121, .288);
+                }
+                .round{
+                    display: grid;
+                    place-items: center;
+                    width: 140px;
+                    height: 140px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    backface-visibility: hidden;
+                    background: white;
+                    box-shadow: -1px -1px 1px rgba(94, 104, 121, .288), 3px 3px 5px rgba(94, 104, 121, .288);
+                }
+                .pH{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+                .wheelBox,.pH{
+                    padding: 10px 0 10px 0;
+                    margin: 10px 0 10px 0;
+                }
+                .wheel .info{
+                    word-wrap: break-word;
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    display: none;
+                    backface-visibility: hidden;
+                }
+                .wheel .tag{
+                    position: absolute;
+                    width: 100%;
+                    text-align: center;
+                    top: 0;
+                }
+                .wheel{
+                    border-top: 2px solid #b7385e;
+                }
+                .tag span{
+                    box-shadow: -1px -1px 1px rgba(94, 104, 121, .288), 3px 3px 5px rgba(94, 104, 121, .288);
+                    background:#b7385e;
+                    color: white;
+                    padding: 2px 10px 2px 10px;
+                }
+                /*#b7385e*/
+            </style>
+            <div class="panel">
+                <div class="pH"><h1 style="font-family: 'Roboto',sans-serif; text-align:center; color:#b7385e; font-size:1.6rem; border-bottom: 2px solid #b7385e;">Our Value Proposition and Consultancy</h1></div>
+                <div class="wheelBox">
+                    <div class="wheel">
+                        <div class="tag"><span>High Quality Competitive Mines</span></div>
+                        <div class="front">
+                            <div class="round"><img src="img/semi.png" alt="" width="60%" height="60%"></div>
+                        </div>
+                        <div class="back">
+                            We have <br> <strong>High Quality Competitive Mines</strong>
+                            with strong margins at all operations. Our mines have demonstrated operational excellence and a culture of continuous improvement throughout the cycle.
+                        </div>
+                    </div>
+                    <div class="wheel">
+                        <div class="tag"><span>Financial Strength</span></div>
+                        <div class="front">
+                            <div class="round"><img src="img/growth.png" alt="" width="60%" height="60%"></div>
+                        </div>
+                        <div class="back">
+                            Our proven track record for rigorous investment approach is focused on value creation. Our <strong>Financial Strength</strong> gives us substantial flexibility to respond to opportunities. Choose Us and get the best trade.
+                        </div>
+                    </div>    
+                    <div class="wheel">
+                        <div class="tag"><span>Meaningful Scale Growth-Oriented</span></div>
+                        <div class="front">
+                            <div class="round"><img src="img/growth.png" alt="" width="60%" height="60%"></div>
+                        </div>
+                        <div class="back">
+                            Our proven track record for rigorous investment approach is focused on value creation. Our <strong>Financial Strength</strong> gives us substantial flexibility to respond to opportunities. Choose Us and get the best trade.
+                        </div>
+                    </div>       
+                </div>
+                
+            </div>
+        </section>
+        <script>
+            const wheels = document.querySelectorAll('.wheel')
+
+            wheels.forEach(wheel=>{
+                wheel.onclick = ()=>{
+                    wheel.classList.toggle('flip')
+                }
+            })
+        </script>
+        <script src="js/homeII.js"></script>
+
+        <section class="pageIV" id="pageIV">
+            <section class="partB">
+                <span id="contact">CONTACT US</span>
+                <div class="boxList">
+                    <section class="list">
+                        <a href="">✤ Home</a>  
+                        <a href="">✤ Our Company </a>
+                        <a href="">✤ Board of Directors</a>
+                    </section>
+                    <section class="list">
+                        <a href="">✤ Contact</a> 
+                        <a href="">✤ Overview</a>
+                        <a href="">✤ Mining</a>
+                        <a href="">✤ Gold Trading</a> 
+                    </section>
+                    <section class="list">
+                        <a href="">✤ Responsible Mining</a>
+                        <a href="">✤ Mining Consultancy</a>
+                        <a href="">✤ Haulage</a>
+                    </section>
+                </div>
+            </section>
+        </section>
+        </body>
+        </html>

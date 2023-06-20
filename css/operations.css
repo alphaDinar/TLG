@@ -1,0 +1,105 @@
+.secII{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    height: 70vh;
+}
+.content{
+    position: relative;
+    height: 50vh;
+    display: flex;
+    width: 70%;
+    box-shadow: 1px -1px 1px #ffffff73, 1px 1px 4px  1px rgba(94, 104, 121, .288);    
+    transition: 0.4s ease; 
+    border: 5px solid transparent;           
+}
+.conTag{
+    position: absolute;
+    background: #b7385e;
+    color: white;
+    padding: 5px;
+    top: 0;
+    left: 0;
+}
+.content.up{
+    border: 5px solid #b7385e;
+    z-index: 1000;
+    transform: translateY(-50px);
+}
+.content.down{
+    border: 5px solid #b7385e;
+    z-index: 1000;
+    transform: translateY(50px);
+}
+.content section{
+    width: 50%;
+    box-shadow: 1px -1px 1px #ffffff73, 1px 1px 4px  1px rgba(94, 104, 121, .288);                
+}
+.info{
+    padding: 10px;
+    overflow-y:auto;
+}
+.add,.rem{
+    background: #434557;
+    border: 2px solid transparent;
+    color: whitesmoke;
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+    width: 4%; 
+    box-shadow: 1px -1px 1px #ffffff73, 1px 1px 4px  1px rgba(94, 104, 121, .288);                
+    height: 8%;
+    cursor: pointer;
+}
+.add:hover, .rem:hover{
+    font-size: 2rem;
+    color: #b7385e;
+}
+.add.change, .rem.change{
+    box-shadow: 1px -1px 1px #ffffff73, 1px 1px 4px  1px rgba(94, 104, 121, .288);                
+    background: whitesmoke;
+    color: transparent;
+}
+
+@media all and (max-width:1100px){
+    .content{
+        width: 80%;
+    }
+}
+@media all and (max-width:750px){
+    .content{
+        width: auto;
+    }
+}
+
+@media all and (max-width:500px){
+    .pageI{
+        height: 30vh;
+    }
+    .secII{
+        flex-direction: column;
+    }
+    .add, .rem{
+        z-index: 3000;
+        transform: rotate(90deg);
+        height: 10%;
+        width: 10%;
+    }
+    .content{
+        flex-direction: column;
+    }
+    .content section{
+        width: auto;
+        height: auto;
+    }
+    .content.up{
+        transform: translateY(50px);
+    }
+    .content.down{
+        transform: translateY(-50px);
+    }
+}

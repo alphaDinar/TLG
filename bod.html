@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/homeII.css">
+    <link rel="stylesheet" href="css/company.css">
+</head>
+<body>
+    <a href="#page">
+        <img src="img/logo.png" id="logo" style="z-index: 11;">
+    </a>
+    <section id="pageI" class="pageI" style="background: url('img/level19.jpg');background-repeat: no-repeat; background-size: cover; background-position: center;">
+        <a href="#pageIV" class="navTag">
+            ^ 
+        </a>
+        <div class="navII">
+            <div>
+                <a href="index.html">Home</a>
+            </div>
+            <div>About 
+                <ul class="sub">
+                    <li><a href="company.html">Our Company</a></li>
+                    <li><a href="bod.html">Board Of Directors</a></li>
+                </ul>
+            </div>
+            <div>
+                <a href="operations.html">Operations</a>
+            </div>
+            <div>Other Services
+                <ul class="sub">
+                    <li><a href="minC.html">Mining Consultancy</a></li>
+                    <li><a href="transport.html">Haulage </a></li>
+                </ul>
+            </div>
+            <div>
+                <a href="#pageIV">Contact</a>
+            </div>
+        </div>
+        <div class="menu">
+            <img src="img/menu.png">
+        </div>
+        
+        <div class="lowNav" style="height: 20vh;">
+            <h1 id="mHead" style="font-family: 'Roboto',sans-serif; text-align:center; color:white; font-size:2.5rem;"> 
+                BOARD OF DIRECTORS
+            </h1>
+        </div>
+    </section>
+    <section class="secII">
+        <section class="header">BOARD OF DIRECTORS</section>
+        <section class="nameList">
+            <div id="name" class="nL">
+                <div class="top">
+                    <h1 class="tH">Mr. Sampson Kofi Wiredu</h1>
+                </div>
+                <hr style="background: salmon; height: 1px; width: 80%;">
+                <div class="low">
+                    <span >Managing Director</span>
+                </div>
+            </div>
+            <div id="name" class="nR">
+                <div class="top">
+                    <h1 class="tH">Mrs. Mary Wiredu</h1>
+                </div>
+                <hr style="background: salmon; height: 1px; width: 80%;">
+                <div class="low">
+                    <span >Directress</span>
+                </div>
+            </div>
+            <div id="name" class="nL">
+                <div class="top">
+                    <h1 class="tH">MR. Robert Nfodjo</h1>
+                </div>
+                <hr style="background: salmon; height: 1px; width: 80%;">
+                <div class="low">
+                    <span >Accountant</span>
+                </div>
+            </div>
+            <div id="name" class="nR">
+                <div class="top">
+                    <h1 class="tH">Mr. Ebenezer Nti</h1>
+                </div>
+                <hr style="background: salmon; height: 1px; width: 80%;">
+                <div class="low">
+                    <span >Secretary</span>
+                </div>
+            </div>
+            <div id="name" class="nL">
+                <div class="top">
+                    <h1 class="tH">Ebenzer Nti</h1>
+                </div>
+                <hr style="background: salmon; height: 1px; width: 80%;">
+                <div class="low">
+                    <span >Office and Administrative Personel</span>
+                </div>
+            </div>
+            <div id="name" class="nR">
+                <div class="top">
+                    <h1 class="tH">Patrik Mensah</h1>
+                </div>
+                <hr style="background: salmon; height: 1px; width: 80%;">
+                <div class="low">
+                    <span >Office and Administrative Personel</span>
+                </div>
+            </div>
+            <div id="name" class="nL">
+                <div class="top">
+                    <h1 class="tH">Egblogbe Anaglate Esq</h1>
+                </div>
+                <hr style="background: salmon; height: 1px; width: 80%;">
+                <div class="low">
+                    <span >Attorney</span>
+                </div>
+            </div>
+            <div id="name" class="nR">
+                <div class="top">
+                    <h1 class="tH">Asamoa Bonsu and Company</h1>
+                </div>
+                <hr style="background: salmon; height: 1px; width: 80%;">
+                <div class="low">
+                    <span >Auditor</span>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section class="pageIV" id="pageIV" style="flex-direction: column;">
+        <section class="partB">
+            <span id="contact">CONTACT US</span>
+            <div class="boxList">
+                <section class="list">
+                    <a href="index.html">✤ Home</a>  
+                    <a href="company.html">✤ Our Company </a>
+                    <a href="bod.html">✤ Board of Directors</a>
+                </section>
+                <section class="list">
+                    <a href="">✤ Contact</a> 
+                    <a href="">✤ Overview</a>
+                    <a href="">✤ Mining</a>
+                    <a href="">✤ Gold Trading</a> 
+                </section>
+                <section class="list">
+                    <a href="">✤ Responsible Mining</a>
+                    <a href="">✤ Mining Consultancy</a>
+                    <a href="">✤ Haulage</a>
+                </section>
+            </div>
+        </section>
+    </section>
+    <script src="js/homeII.js"></script>
+    <script>
+        const nL = document.querySelectorAll('.nL')
+        const nR = document.querySelectorAll('.nR')
+
+        function showN(){
+            nL.forEach(n=>{
+                const trigger = window.innerHeight / 5*4.5
+                const nTop = n.getBoundingClientRect().top
+                if(nTop < trigger){
+                    n.classList.add('change')
+                }else{
+                    n.classList.remove('change')
+                }
+            })
+            nR.forEach(n=>{
+                const trigger = window.innerHeight / 5*4.5
+                const nTop = n.getBoundingClientRect().top
+                if(nTop < trigger){
+                    n.classList.add('change')
+                }else{
+                    n.classList.remove('change')
+                }
+            })
+        }
+        window.onload = ()=>{
+            showN()
+        }
+        window.onscroll = ()=>{
+            showN()
+        }
+        </script>
+        </body>
+</html>

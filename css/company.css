@@ -1,0 +1,150 @@
+.secI{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hlights{
+    display: flex;
+    flex-direction: column;
+    
+    width: 95%;
+}
+.level{
+    margin: 10px 0 10px 0;
+    display: flex;
+    opacity: 0;
+    align-items: center;
+    transition: 0.3s ease;
+    justify-content: space-around;
+    box-shadow: 1px -1px 1px rgba(94, 104, 121, .288), 1px 1px 4px  1px rgba(94, 104, 121, .288);
+}
+.level.change{
+    opacity: 1;
+}
+.level.change:hover{
+    box-shadow: 1px -1px 1px #c94d72, 1px 1px 4px  1px #c94d72;
+}
+.hexaB{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    filter: drop-shadow(2px 2px 2px #c94d72);
+    transition: 0.3s ease;
+}
+.hexaB:hover{
+    filter: drop-shadow(3px 3px 5px #c94d72);
+}
+.hexa{
+    transition: 0.3s ease;
+    height: 230px;
+    width: 235px;
+    clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+    position: relative;
+}
+.hexa.anime{
+    transform: translateY(-10px) translateX(10px);
+}
+.xhr{
+    position: relative;
+    transform: rotate(90deg);
+    border-top: 3px dotted black;
+    width: 15%; 
+}
+.tag{
+    border-radius: 50%;
+    text-align: center;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    background: white;
+    border: 5px solid #c94d72;
+    transform: rotate(270deg) translateX(50%) translateY(270%);
+    position: absolute;
+}
+.infoB{
+    width: 30%;
+    
+}
+.info{
+    font-size: 1rem;
+    padding: 10px;
+    word-wrap: break-word;
+}
+
+/* bod.html -- css  */
+.secII{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.nameList{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.nL{
+    position: relative;
+    transition: 0.4s ease;
+    opacity: 0;
+    right: 100px;
+}
+.nL.change{
+    right: 0;
+    opacity: 1;
+}
+.nR{
+    position: relative;
+    transition: 0.5s ease;
+    opacity: 0;
+    left: 100px;
+}
+.nR.change{
+    left: 0;
+    opacity: 1;
+}
+#name{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    width: 50%;
+    margin: 10px 0 10px 0;
+    box-shadow: 1px -1px 1px rgba(94, 104, 121, .288), 1px 1px 4px  1px rgba(94, 104, 121, .288);
+}
+.tH{
+    font-family:roboto;
+    padding: 15px;
+    font-size: 1.3rem;
+}
+.low{
+    padding:10px; 
+    font-size: 1.1rem;
+}
+/* bod.html -- css  */
+
+
+@media all and (max-width:900px){
+    .level{
+        flex-direction: column;
+    }
+    .xhr{
+        display: none
+    }
+    .hexaB{
+        width: auto;
+    }
+    .infoB{
+        text-align: center;
+        width: auto;
+    }
+}

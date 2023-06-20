@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/homeII.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/operations.css">
+    
+    </head>
+    <body>
+        <a href="#page">
+            <img src="img/logo.png" id="logo" style="z-index: 11;">
+        </a>
+        <section id="pageI" class="pageI" style="background: url('img/level10.jpg');background-repeat: no-repeat; background-size: cover; background-position: center;">
+            <a href="#pageIV" class="navTag">
+                ^ 
+            </a>
+            <div class="navII">
+                <div>
+                    <a href="index.html">Home</a>
+                </div>
+                <div>About 
+                    <ul class="sub">
+                        <li><a href="company.html">Our Company</a></li>
+                        <li><a href="bod.html">Board Of Directors</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <a href="operations.html">Operations</a>
+                </div>
+                <div>Other Services
+                    <ul class="sub">
+                        <li><a href="minC.html">Mining Consultancy</a></li>
+                        <li><a href="transport.html">Haulage </a></li>
+                    </ul>
+                </div>
+                <div>
+                    <a href="#pageIV">Contact</a>
+                </div>
+            </div>
+            <div class="menu">
+                <img src="img/menu.png">
+            </div>
+            <div class="lowNav" style="height: 20vh;">
+                <h1 id="mHead" style="font-family: 'Roboto',sans-serif; text-align:center; color:white; font-size:2.5rem;"> 
+                    OPERATIONS
+                </h1>
+            </div>
+        </section>
+        <section class="secII">
+            <button class="rem"><</button>
+            <section class="content">
+                <section class="img">
+                    <img class="conI" src="img/side3.jpg" alt="" width="100%" height="100%">
+                </section>
+                <section class="info">
+                    <h1>Our Overview and Strategy</h1> 
+                    As the world’s leading gold company, TLG's strategy is to create value for all shareholders and stakeholders through efforts to: Deliver superior operational execution by ensuring fatality risks are managed at all times with strong leadership and systems, continually improving operational performance, and meeting commitments without fail.
+                    TLG Trans Company Limited Sustain a global portfolio of long-life assets by growing margins, Reserves and Resources from profitable expansions, exploration and value accretive investments Lead the gold sector in profitability and responsibility by consistently generating superior returns, demonstrating our values, and leading in environmental, social and governance performance To support this strategy, the Company remains focused on five foundational principles to help guide us in our journey of continuous improvement:
+                </section>
+                <div class="conTag">Overview</div>
+            </section>
+            <button class="add">></button>
+        </section>
+        <script src="js/homeII.js"></script>
+        <script>
+            const content = document.querySelector('.content') 
+            const add = document.querySelector('.add')
+            const rem = document.querySelector('.rem')
+            const conTag = document.querySelector('.conTag')
+            const conI = document.querySelector('.conI')
+            const info = document.querySelector('.info')
+            
+            var a1 = "Overview"
+            var b1 = "Mining"
+            var c1 = "Gold Trading"
+            var d1 = "Transport"
+
+            var a = 'file:///C:/xampp/htdocs/TLGII/img/side4.jpg'
+            var b = 'file:///C:/xampp/htdocs/TLGII/img/side3.jpg'
+            var c = 'file:///C:/xampp/htdocs/TLGII/img/side.jpg'
+            var d = 'file:///C:/xampp/htdocs/TLGII/img/level6.jpg'
+
+            var ai = "<h1>Our Overview and Strategy</h1> As the world’s leading gold company, TLG's strategy is to create value for all shareholders and stakeholders through efforts to: Deliver superior operational execution by ensuring fatality risks are managed at all times with strong leadership and systems, continually improving operational performance, and meeting commitments without fail. TLG Trans Company Limited Sustain a global portfolio of long-life assets by growing margins, Reserves and Resources from profitable expansions, exploration and value accretive investments Lead the gold sector in profitability and responsibility by consistently generating superior returns, demonstrating our values, and leading in environmental, social and governance performance To support this strategy, the Company remains focused on five foundational principles to help guide us in our journey of continuous improvement: "
+            var bi = "<h1>We Ask You To Share Your Goals</h1> The more we know about your goals ,the better we can manage our services to help you attain them . If your goals change as a matter progresses , we ask that you tell us , so we can adjust our approach to meet your expectations."
+            var ci = "<h1>Our Gold Trading</h1> Gold is one of the most traded commodities in the world that we trade in. But it is also one of the most challenging because of its use in various industries and as a store of wealth Choose us and get the best value and quality from Tlg Trans Company Limited. "                      
+            var di = "<h1>TLG Transport</h1> Gold is one of the most traded commodities in the world that we trade in. But it is also one of the most challenging because of its use in various industries and as a store of wealth Choose us and get the best value and quality from Tlg Trans Company Limited. "                      
+
+
+            let tagList = [a1,b1,c1,d1]
+            let imgList = [a,b,c,d]
+            let infoList = [ai,bi,ci,di]
+
+            conTag.innerHTML = tagList[0]
+            conI.src = imgList[0]
+            info.innerHTML = infoList[0]
+
+            add.onclick = ()=>{
+                if(conI.src === imgList[0]){
+                    content.classList.add('up')
+                    add.classList.remove('change')
+                    rem.classList.remove('change')
+                    var x = 1
+                    storeCon(x)
+                    content.ontransitionend = ()=>{
+                        content.classList.remove('up')
+                        conTag.innerHTML = tagList[1]
+                        conI.src = imgList[1]
+                        info.innerHTML = infoList[1]
+                    }
+                }else if(conI.src === imgList[1]){
+                    content.classList.add('up')
+                    add.classList.add('change') 
+                    var x = 2
+                    storeCon(x)
+                    content.ontransitionend = ()=>{
+                        content.classList.remove('up')
+                        conTag.innerHTML = tagList[2]
+                        conI.src = imgList[2]
+                        info.innerHTML = infoList[2]
+                    }
+                }                 
+            }
+            rem.onclick = ()=>{
+                if(conI.src === imgList[2]){
+                    content.classList.add('down')
+                    add.classList.remove('change')
+                    rem.classList.remove('change')
+                    var x = 1
+                    storeCon(x)
+                    content.ontransitionend = ()=>{
+                        content.classList.remove('down')
+                        conTag.innerHTML = tagList[1]
+                        conI.src = imgList[1]
+                        info.innerHTML = infoList[1]
+                    }
+                }else if(conI.src === imgList[1]){
+                    content.classList.add('down')
+                    add.classList.remove('change')
+                    rem.classList.add('change')
+                    var x = 0
+                    storeCon(x)
+                    content.ontransitionend = ()=>{
+                        content.classList.remove('down')
+                        conTag.innerHTML = tagList[0]
+                        conI.src = imgList[0]
+                        info.innerHTML = infoList[0]
+                    }                  
+                }
+            }
+            function storeCon(x){
+                localStorage.setItem('tag', tagList[x])
+                localStorage.setItem('img', imgList[x])
+                localStorage.setItem('info', infoList[x])
+            }
+            window.onload = ()=>{
+                if(localStorage.getItem('tag')){
+                    if(localStorage.getItem('tag') != tagList[0]){
+                        conTag.innerHTML = localStorage.getItem('tag')
+                    }
+                    if(localStorage.getItem('tag') === tagList[2]){
+                        add.classList.add('change')
+                    }
+                    if(localStorage.getItem('tag') === tagList[0]){
+                        rem.classList.add('change')
+                    }
+                }else{
+                    conTag.innerHTML = tagList[0]
+                }
+                if(localStorage.getItem('img')){
+                    if(localStorage.getItem('img') != imgList[0]){
+                        conI.src = localStorage.getItem('img')
+                    }
+                }else{
+                    conI.src = imgList[0]
+                }
+                if(localStorage.getItem('info')){
+                    if(localStorage.getItem('info') != infoList[0]){
+                        info.innerHTML = localStorage.getItem('info')
+                    }
+                }else{
+                    info.innerHTML = infoList[0]
+                }
+            }
+        </script>
+
+        <section class="pageIV" id="pageIV">
+            <section class="partB">
+                <span id="contact">CONTACT US</span>
+                <div class="boxList">
+                    <section class="list">
+                        <a href="">✤ Home</a>  
+                        <a href="">✤ Our Company </a>
+                        <a href="">✤ Board of Directors</a>
+                    </section>
+                    <section class="list">
+                        <a href="">✤ Contact</a> 
+                        <a href="">✤ Overview</a>
+                        <a href="">✤ Mining</a>
+                        <a href="">✤ Gold Trading</a> 
+                    </section>
+                    <section class="list">
+                        <a href="">✤ Responsible Mining</a>
+                        <a href="">✤ Mining Consultancy</a>
+                        <a href="">✤ Haulage</a>
+                    </section>
+                </div>
+            </section>
+        </section>
+        </body>
+        </html>

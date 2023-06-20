@@ -1,0 +1,768 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@1,700&display=swap');*/
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    font-family: 'Baloo 2', cursive;
+}
+html{
+    scroll-behavior: smooth;
+    height: 100vh;
+    overscroll-behavior-y: scroll;
+    overflow-y: scroll;
+    scroll-snap-type: y proximity;
+}
+body{
+    background: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#logo{
+    display: none;
+    background:white;
+    opacity: 1;
+    box-shadow: -1px -1px 1px #ffffff73, 3px 3px 5px rgba(94, 104, 121, .288);
+    width: auto;
+    position: fixed;
+    left: 0;
+    top: 78px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: 0.3s ease;
+    justify-content: flex-start;
+    animation: animeLogo 0.4s ease;
+}
+@keyframes animeLogo{
+    0% {left: -100px; opacity: 0;}
+    100% {left: 0; opacity: 1;}
+}
+#logo.push{
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+.pageI,.pageIII{
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+.pageII{
+    height: 50vh;
+}
+.pageI{
+    background: url('../img/mines1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.pageI .navBar{
+    background: rgba(183,56,94,0.7);
+    z-index: 10;
+    display: none;
+    height: 10vh;
+    justify-content: center;
+    align-items: flex-start;
+    position:fixed;
+    width: 100%;
+    animation: animeNa 0.4s ease;
+    transition: 0.3s ease;
+}
+@keyframes animeNav{
+    0% {top: -100px; opacity: 0;}
+    100% {top: 0; opacity: 1;}
+}
+.navBar div, .navII div, .navBar a, .navII a{
+    margin: 20px;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid transparent;
+    transition: 0.2s ease;
+}
+.navBar div:hover, .navII div:hover{
+    border-bottom: 2px solid salmon;
+}
+.navBar .sub,.navII .sub{
+    transition: 0.3s ease;
+    text-align: center;
+    padding: 5px 8px 5px 8px;
+    flex-direction: column;
+    display: none;
+    justify-content: center;
+}
+.navBar .sub, .navII .sub{
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%) 
+}
+.navBar div:hover .sub, .navII div:hover .sub{
+    width: max-content;
+    display:flex;
+}
+.navBar .sub{
+    background: white;
+}
+.navII .sub{
+    background: #1a9fe4;
+}
+.sub li{
+    list-style: none;
+}
+.navBar .sub li a{
+    border-bottom: 2px solid #d86487;
+    color: #c94d72;
+}
+.navII .sub li a{
+    border-bottom: 2px solid white;
+    color: white;
+}
+.navBar .sub li a:hover{
+    color: #1a9fe4;
+    border-bottom: 2px solid #1a9fe4;
+}
+.navII .sub li a:hover{
+    color: white;
+    border-bottom: 2px solid white;
+}
+.navII{
+    position: fixed;
+    top: 0;
+    display: flex;
+    background: rgba(183,56,94,1);
+    align-items: flex-start;
+    justify-content: center;
+    opacity: 0;
+    height: 0;
+    width: 100%;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+.navII.show{
+    z-index: 11;
+    pointer-events: all;
+    opacity: 1;
+    height: 10vh;
+}
+.navTag{
+    position: fixed; 
+    bottom: 50px;
+    right: 70px;
+    z-index: 15;
+    text-align: center;
+    font-size: 3rem;
+    height: 65px;
+    width: 65px;
+    border: 2px solid #983c54;
+    transition: 0.5s ease;
+    background: whitesmoke;
+    color: #983c54;
+    transform: rotate(180deg);
+}
+.navTag.change{
+    border: 2px solid transparent;
+    transform: rotate(0deg);
+    background: #c94d72;
+    color: whitesmoke;
+}
+.menu{
+    position: fixed;
+    opacity: 0;
+    height: 0px;
+    top: 10px;
+    left: 5px;
+    z-index: 15;
+    border-radius: 50%;
+    background: transparent;
+    background: white;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, .288);
+    width: 50px;
+    transition: 0.3s ease;
+    /*animation: animeMenu 0.4s ease; */
+}
+.menu.active{
+    box-shadow: none;
+}
+@keyframes animeMenu{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.pageI .main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    animation: animeMain 0.4s ease;
+}
+@keyframes animeMain{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+#mHeadII{
+    display: none;
+}
+.pageI .main a{
+    background: #b7385e;
+    color: white;
+    margin: 10px;
+    font-size: 1.5rem;
+    box-shadow: 1px -1px 1px #c94d72, 
+    1px 1px 4px  1px rgba(94, 104, 121, .288);
+    padding: 5px 15px 5px 15px;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    transition: 0.2s ease;
+}
+.pageI .main a:hover{
+    background: transparent;
+    border: 2px dashed white;
+}
+.pageI .lowNav{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(183,56,94,0.7);
+    animation: animeLowNav 0.4s ease;
+}
+@keyframes animeLowNav{
+    0% {bottom: -100px; opacity: 0;}
+    100% {bottom: 0; opacity: 1;}
+}
+
+.pageI .lowNav .box{
+    font-size: 1.4rem;
+    color: white;   
+    min-width:25%;
+    text-align: center;
+    opacity: 1;
+    border: 3px solid transparent;
+    transition: 0.3s ease;
+}
+.pageI .lowNav .box:hover{
+    padding: 0 0 20px 0;
+    transform: translateY(-20px);
+    border-bottom: 3px solid white;
+}
+.lHr{
+    border-top: 3px solid white; 
+    width:100px;
+    transform: rotate(90deg);
+}
+.lowNav #con{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 10px 0 5px;
+    font-size: 20px;
+    color: white;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    background:rgb(147, 39, 72);
+}
+.lowNav #con:hover{
+    padding: 0 10px 0 40px;
+}
+#pageII .top{
+    display: flex;
+}
+#pageII .top .left, #pageII .top .right{
+    width: 48%;
+    padding: 5px;
+    height: 48vh;
+}
+#pageII .top .left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#pageII .top .left .box{
+    box-shadow: 1px -1px 1px #ffffff73, 
+    1px 1px 4px  1px rgba(94, 104, 121, .288);
+    background: #1a9fe4;
+    padding: 5px;
+    margin: 5px;
+    font-size: 17px;
+    color: white;
+    justify-content: space-around;
+}
+#pageII .low{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#pageII .low .headInfo{
+    position: relative;
+    background: white;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, .288);
+    border: 3px solid #b7385e;
+    padding: 10px;
+    margin: 10px;
+}
+#pageII .low .headInfo button{
+    background: #c94d72;
+    color: white;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#pageII .low .headInfo button:hover{
+    background: transparent;
+    border: 2px dashed #c94d72;
+    color: #c94d72;
+}
+.pageII{
+    background: whitesmoke;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.pageII .box{
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, .288); 
+    background:white;
+    width: 49%;
+    height: 48vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+@keyframes animeBoxT{
+    0% {top: -30px; opacity: 0;}
+    100% {top: 0; opacity: 1;}
+}
+@keyframes animeBoxL{
+    0% {bottom: -30px; opacity: 0;}
+    100% {bottom: 0; opacity: 1;}
+}
+
+#welHeader{
+    font-size: 2rem; 
+    font-family:roboto; 
+    border-bottom:2px solid salmon;
+}
+#spanBox{
+    display: flex;
+    width: 97%;
+    justify-content: space-around;
+}
+#spanBox div{
+    padding: 5px;
+    max-height: 150px;
+    overflow-y: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background: #d86487;
+    text-align: center;
+    color: white;
+    width: 31.5%; 
+    box-shadow: 1px -1px 1px #ffffff73, 
+    1px 1px 4px  1px rgba(94, 104, 121, .288);
+}
+#goalBox{
+    width:43%; 
+    cursor: pointer;
+    border:3px solid #c94d72; 
+    padding:7px;
+    box-shadow: 1px -1px 1px #ffffff73, 
+    1px 1px 4px  1px rgba(94, 104, 121, .288);
+}
+.goal{
+    transition: 0.3s ease;
+}
+.goal.change{
+    transform: translateY(10px);
+    opacity: 0;
+}
+.g{
+    border-bottom:2px solid salmon;
+}
+.gII{
+    padding: 5px 0 5px 0;
+}
+#sideImg{
+    width: 52%;
+    box-shadow: 1px -1px 1px #ffffff73, 
+    1px 1px 4px  1px rgba(94, 104, 121, .288);
+    border: 4px solid #d86487;
+    transition: 0.3s ease;
+}
+.sideImg.drop{
+    border: 4px solid #d86487;
+    transform: translateY(-20px);
+}
+#sideImg:hover{
+    transform: scale(1.1);
+}
+.imBox{
+    border-right: 3px dashed #b7385e;
+    padding: 10px;
+    margin: 10px;
+}
+.imgA{
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, .288);
+    border: 6px solid white;
+    max-height: 40vh;
+    width: auto;
+    transition: 0.2s ease;
+} 
+.imgA:hover{
+    transform: scale(1.04)
+}
+.pageIII{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.pageIII .conBox{
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.pageIII .con{
+    width: 27%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    animation: animeCon 0.5s ease;
+}
+@keyframes animeCon{
+    0% {bottom: -100px; opacity: 0;}
+    100% {bottom: 0; opacity: 1;}
+}
+
+
+.pageIII .con div{
+    position: relative;
+    width: 80%;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, .288);
+}
+.pageIII .con{
+    position: relative;
+}
+.pageIII .con .tag{
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, .288);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    position: absolute;
+    top: -15px;
+    z-index: 5;
+    background: #1a9fe4;
+}
+.pageIII .con .tag.up{
+    transform: translateY(-20px);
+}
+.pageIII .con .A{
+    cursor: pointer;
+    min-height: 20vh;
+    background: white;
+    transition: 0.3s ease;
+}
+.pageIII .con .A:hover{
+    transform: translateY(-20px);
+}
+.pageIII .con .B{
+    min-height: 10vh;
+    background: #1a9fe4;
+    color: white;
+    transition: 0.3s ease;
+}
+.pageIII .con .B:hover{
+    transform: translateY(20px);
+}
+.pageIII .con .P{
+    background: transparent;
+}
+.pageIII .con .P img{
+    width: 100%;
+}
+#goalB{
+    background: #c94d72; 
+    width:90px; 
+    font-size:1.4rem;
+    color: white;
+    border: 2px solid transparent;
+    transition: 0.2s ease;
+}
+#goalB:hover{
+    background: transparent;
+    color: #c94d72;
+    border: 2px dashed #c94d72;
+}
+.pageIV{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+}
+.conH{
+    display: flex;
+    justify-content: center;
+}
+.pageIV .partB,.pageIV .partA{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.pageIV .partA .box{
+    width: 100%;
+    margin: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+#contact{
+    color: whitesmoke;
+    background: #434557;
+    padding: 5px 10px 5px 10px;
+}
+.boxList{
+    margin: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;  
+    transition: 0.3s ease;
+}
+.boxList .list{
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, .288);
+    background: #434557;
+    display: flex;
+    padding: 15px;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    animation: animeList 0.5s ease; 
+}
+@keyframes animeList{
+    0% {right: -150px; opacity: 0;}
+    100% {right: 0; opacity: 1;}
+}
+.boxList .list a{
+    margin: 2px;
+    border-radius: 5px;
+    color: whitesmoke;
+    width: 90%;
+    padding: 2px;
+    text-align: center;
+    transition: 0.2s ease;
+}
+.boxList .list a:hover{
+    width: auto;
+    letter-spacing: 1px;
+    color: #d86487;
+}
+
+
+
+@media all and (max-width:1000px),
+       all and (max-height:623px){
+    html{
+        scroll-snap-type: none;
+    }
+    .pageI{
+        background-position: center;
+    }
+    .pageI div{
+        height: auto;
+    }
+    .pageII,.pageIII,.pageIV{
+        height: auto;
+        scroll-snap-align: start;
+    }
+    div,section{
+        height: auto;
+    }
+    .pageII{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .pageII .box{
+        height: auto;
+        width: 100%;
+    }
+    .pageIII{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .pageIII .conBox{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: auto;
+    }
+    .pageIII{
+        display: flex;
+    }
+    .pageIII .con{
+        width: 90%;
+    }
+    #goalBox{
+        width: auto;
+    }
+    .navTag{
+        display: none;
+    }
+}
+
+@media all and (max-width:700px) {
+    #logo{
+        display: none;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .navBar{
+        display: none;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .navII,.navII.show{
+        display: flex;
+        width: auto;
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 11;
+        background: #c94d72;
+        padding: 5px;
+        border-radius: 10px;
+        opacity: 0;
+        position: fixed;
+        top: 50px;
+        left: -150px;
+    }
+    .navII.show{
+        opacity: 1;
+        left: 0;
+    }
+    .navII div .sub{
+        border-radius: 5px;
+        position: absolute;
+        background: #983c54;
+        left: 100px;
+        transform: translate(19%,-50%);
+    }
+    .navII div{
+        width: 90%;
+        position: relative;
+        padding: 0px 5px 0px 5px;
+        margin: 1px;
+        color: #983c54;
+        background: white;
+        border-radius: 5px;
+        box-shadow: -3px -3px 7px rgba(94, 104, 121, .288), 3px 3px 5px rgba(94, 104, 121, .288);
+    }
+    .navII a{
+        color: #983c54;
+        margin: auto;
+    }
+    .pageI{
+        display: flex;
+        align-items: center;
+    }
+    .pageI .lowNav{
+        display: none;
+    }
+    .pageI .main{
+        height: auto;
+    }
+    .menuList{
+        display: none;
+    }
+    .menu{
+        position: fixed;
+        top: 1px;
+        left: 1px;
+        transform: scale(0.7);
+        box-shadow: none;
+    }
+    .pageI{
+        height: 50vh;
+    }
+    #logo{
+        animation: none;
+    }
+    #sideImg{
+        width: 50%;
+    } 
+    #goalBox{
+        width: auto;
+    }
+    .pageIV{
+        width: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .boxList .list{
+        margin: 5px;
+        box-shadow: -3px -3px 7px rgba(94, 104, 121, .288), 3px 3px 5px rgba(94, 104, 121, .288);
+        width: 60%;
+    }
+    .boxList .list a:hover{
+        letter-spacing: 0px;
+        color: #d86487;
+    }
+}
+@media all and (max-width:500px){
+    #mHeadII{
+        display: flex;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        background: rgba(183,56,94,0.7);
+        height: 20vh;
+    }
+    .navII{
+        display: none;
+    }
+    .lowNav{
+        display: none;
+    }
+    
+    .boxList{
+        flex-direction: column;
+    }
+    .boxList .list{
+        width: auto;
+    }
+}
